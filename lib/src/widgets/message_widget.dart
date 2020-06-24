@@ -9,6 +9,7 @@ class MessageWidget extends StatefulWidget {
   final Color textColor;
   final OwnerType ownerType;
   final String ownerName;
+  final String date;
 
   MessageWidget(
       {this.content,
@@ -16,7 +17,8 @@ class MessageWidget extends StatefulWidget {
       this.fontSize,
       this.textColor,
       this.ownerType,
-      this.ownerName});
+      this.ownerName,
+      this.date});
 
   @override
   _MessageWidgetState createState() => _MessageWidgetState();
@@ -67,7 +69,12 @@ class _MessageWidgetState extends State<MessageWidget>
               nip: BubbleNip.leftTop,
               color: Color.fromRGBO(233, 232, 252, 10),
               alignment: Alignment.topLeft,
-              child: _buildContentText(TextAlign.left)),
+              child: Column(
+                  children: <Widget>[
+                    _buildContentText(TextAlign.left),
+                    Text(widget.date)
+                  ],
+             ),
         ),
       ],
     );
@@ -86,7 +93,12 @@ class _MessageWidgetState extends State<MessageWidget>
               nip: BubbleNip.rightTop,
               color: Colors.white,
               alignment: Alignment.topRight,
-              child: _buildContentText(TextAlign.right)),
+              child: child: Column(
+                  children: <Widget>[
+                    _buildContentText(TextAlign.right),
+                    Text(widget.date)
+                  ],
+             ),,
         ),
         _buildCircleAvatar()
       ],
