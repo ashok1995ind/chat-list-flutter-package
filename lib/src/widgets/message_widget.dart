@@ -75,6 +75,7 @@ class _MessageWidgetState extends State<MessageWidget>
                     Text(widget.date)
                   ],
              ),
+          ),
         ),
       ],
     );
@@ -93,12 +94,13 @@ class _MessageWidgetState extends State<MessageWidget>
               nip: BubbleNip.rightTop,
               color: Colors.white,
               alignment: Alignment.topRight,
-              child: child: Column(
+              child: Column(
                   children: <Widget>[
                     _buildContentText(TextAlign.right),
                     Text(widget.date)
                   ],
-             ),,
+             ),
+          )
         ),
         _buildCircleAvatar()
       ],
